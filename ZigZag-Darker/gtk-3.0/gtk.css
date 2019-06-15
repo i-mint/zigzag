@@ -1690,13 +1690,22 @@ notebook {
     notebook > header > tabs > tab {
       color: rgba(5, 5, 5, 0.55);
       background-image: linear-gradient(-45deg, #f4f4f4 96%, rgba(173, 100, 168, 0.3) 4%); }
+      notebook > header > tabs > tab:backdrop {
+        color: rgba(5, 5, 5, 0.33);
+        background-image: linear-gradient(-45deg, #f4f4f4 96%, rgba(173, 100, 168, 0.2) 4%); }
       notebook > header > tabs > tab:hover:not(:checked) {
         background-image: linear-gradient(-45deg, #efefef 96%, rgba(173, 100, 168, 0.5) 4%);
         color: #a2569d;
         border-color: #dae0e0; }
+        notebook > header > tabs > tab:hover:not(:checked):backdrop {
+          color: rgba(162, 86, 157, 0.78);
+          background-image: linear-gradient(-45deg, #efefef 96%, rgba(173, 100, 168, 0.4) 4%); }
       notebook > header > tabs > tab:checked {
         background-image: linear-gradient(-45deg, #eaeaea 96%, #AD64A8 4%);
         color: #914d8d; }
+        notebook > header > tabs > tab:checked:backdrop {
+          color: rgba(145, 77, 141, 0.78);
+          background-image: linear-gradient(-45deg, #eaeaea 96%, rgba(173, 100, 168, 0.78) 4%); }
       notebook > header > tabs > tab button.flat, notebook > header > tabs > tab button.sidebar-button {
         min-height: 22px;
         min-width: 16px;
@@ -2277,6 +2286,8 @@ frame > border.flat,
 
 scrolledwindow viewport.frame {
   border-style: none; }
+scrolledwindow .view:backdrop, scrolledwindow iconview:backdrop {
+  color: rgba(5, 5, 5, 0.78); }
 scrolledwindow overshoot.top {
   background-image: -gtk-gradient(radial, center top, 0, center top, 0.6, from(rgba(173, 100, 168, 0.2)), to(rgba(173, 100, 168, 0)));
   background-size: 100% 60%;
@@ -2879,7 +2890,7 @@ textview text selection, flowbox flowboxchild:selected, entry selection:focus, e
 modelbutton.flat:active,
 modelbutton.flat:active arrow,
 modelbutton.flat:selected,
-modelbutton.flat:selected arrow, treeview.view:selected, treeview.view:selected:focus, row:selected, calendar:selected, .nemo-window .nemo-window-pane widget.entry:selected:focus, .nemo-window .nemo-window-pane widget.entry:selected {
+modelbutton.flat:selected arrow, treeview.view:selected, treeview.view:selected:focus, row:selected, calendar:selected, .nemo-window .nemo-window-pane widget.entry:selected:focus, .nemo-window .nemo-window-pane widget.entry:selected, .tweak-categories .tweak-category:selected {
   background-image: linear-gradient(0deg, #fafafa 95%, #AD64A8 5%);
   background-color: #fcfafc; }
   row:selected label, label:selected, .view:selected, iconview:selected, .view:selected:focus, iconview:selected:focus,
@@ -2894,8 +2905,20 @@ modelbutton.flat:selected arrow, treeview.view:selected, treeview.view:selected:
   modelbutton.flat:active,
   modelbutton.flat:active arrow,
   modelbutton.flat:selected,
-  modelbutton.flat:selected arrow, treeview.view:selected, treeview.view:selected:focus, row:selected, calendar:selected, .nemo-window .nemo-window-pane widget.entry:selected:focus, .nemo-window .nemo-window-pane widget.entry:selected {
+  modelbutton.flat:selected arrow, treeview.view:selected, treeview.view:selected:focus, row:selected, calendar:selected, .nemo-window .nemo-window-pane widget.entry:selected:focus, .nemo-window .nemo-window-pane widget.entry:selected, .tweak-categories .tweak-category:selected {
     color: #914d8d; }
+    row:selected label:backdrop, label:backdrop:selected, .view:backdrop:selected, iconview:backdrop:selected, iconview:backdrop:selected:focus,
+    .view text:backdrop:selected,
+    iconview text:backdrop:selected,
+    textview text:backdrop:selected,
+    iconview text:backdrop:selected:focus,
+    textview text:backdrop:selected:focus, iconview text selection:backdrop:focus, .view text selection:backdrop, iconview text selection:backdrop,
+    textview text selection:backdrop, flowbox flowboxchild:backdrop:selected, entry selection:backdrop, menuitem.button.flat:backdrop:active, menuitem.button.flat:active arrow:backdrop, menuitem.button.flat:backdrop:selected, menuitem.button.flat:selected arrow:backdrop,
+    modelbutton.flat:backdrop:active,
+    modelbutton.flat:active arrow:backdrop,
+    modelbutton.flat:backdrop:selected,
+    modelbutton.flat:selected arrow:backdrop, treeview.view:backdrop:selected:focus, row:backdrop:selected, calendar:backdrop:selected, .nemo-window .nemo-window-pane widget.entry:backdrop:selected, .tweak-categories .tweak-category:backdrop:selected {
+      color: rgba(145, 77, 141, 0.78); }
     row:selected label:disabled, label:disabled:selected, .view:disabled:selected, iconview:disabled:selected, iconview:disabled:selected:focus,
     .view text:disabled:selected,
     iconview text:disabled:selected,
@@ -2906,19 +2929,42 @@ modelbutton.flat:selected arrow, treeview.view:selected, treeview.view:selected:
     modelbutton.flat:disabled:active,
     modelbutton.flat:active arrow:disabled,
     modelbutton.flat:disabled:selected,
-    modelbutton.flat:selected arrow:disabled, treeview.view:disabled:selected:focus, row:disabled:selected, calendar:disabled:selected, .nemo-window .nemo-window-pane widget.entry:disabled:selected {
+    modelbutton.flat:selected arrow:disabled, treeview.view:disabled:selected:focus, row:disabled:selected, calendar:disabled:selected, .nemo-window .nemo-window-pane widget.entry:disabled:selected, .tweak-categories .tweak-category:disabled:selected {
       color: #d6b2d4; }
+  .view:backdrop:selected, iconview:backdrop:selected, iconview:backdrop:selected:focus,
+  .view text:backdrop:selected,
+  iconview text:backdrop:selected,
+  textview text:backdrop:selected,
+  iconview text:backdrop:selected:focus,
+  textview text:backdrop:selected:focus, iconview text selection:backdrop:focus, .view text selection:backdrop, iconview text selection:backdrop,
+  textview text selection:backdrop, flowbox flowboxchild:backdrop:selected, entry selection:backdrop, menuitem.button.flat:backdrop:active, menuitem.button.flat:active arrow:backdrop, menuitem.button.flat:backdrop:selected, menuitem.button.flat:selected arrow:backdrop,
+  modelbutton.flat:backdrop:active,
+  modelbutton.flat:active arrow:backdrop,
+  modelbutton.flat:backdrop:selected,
+  modelbutton.flat:selected arrow:backdrop, treeview.view:backdrop:selected:focus, row:backdrop:selected, calendar:backdrop:selected, .nemo-window .nemo-window-pane widget.entry:backdrop:selected, .tweak-categories .tweak-category:backdrop:selected {
+    color: rgba(145, 77, 141, 0.78);
+    background-image: linear-gradient(0deg, #fafafa 95%, rgba(173, 100, 168, 0.78) 5%);
+    background-color: rgba(252, 250, 252, 0.78); }
 
 .primary-toolbar .linked:not(.vertical):not(.path-bar).stack-switcher > button:active, headerbar .linked:not(.vertical):not(.path-bar).stack-switcher > button:active, .primary-toolbar .linked:not(.vertical):not(.path-bar).stack-switcher > button:checked, headerbar .linked:not(.vertical):not(.path-bar).stack-switcher > button:checked,
 .primary-toolbar .linked:not(.vertical).path-bar > button:active,
 headerbar .linked:not(.vertical).path-bar > button:active,
 .primary-toolbar .linked:not(.vertical).path-bar > button:checked,
-headerbar .linked:not(.vertical).path-bar > button:checked, .tweak-category:selected, filechooser placessidebar.sidebar row.sidebar-row.has-open-popup:selected, filechooser placessidebar.sidebar row.sidebar-row:selected, filechooser placessidebar.sidebar row.sidebar-row:selected:hover, filechooser placessidebar.sidebar row.sidebar-row:active:hover,
+headerbar .linked:not(.vertical).path-bar > button:checked, filechooser placessidebar.sidebar row.sidebar-row.has-open-popup:selected, filechooser placessidebar.sidebar row.sidebar-row:selected, filechooser placessidebar.sidebar row.sidebar-row:selected:hover, filechooser placessidebar.sidebar row.sidebar-row:active:hover,
 .nautilus-window placessidebar.sidebar row.sidebar-row.has-open-popup:selected,
 .nautilus-window placessidebar.sidebar row.sidebar-row:selected,
 .nautilus-window placessidebar.sidebar row.sidebar-row:selected:hover,
 .nautilus-window placessidebar.sidebar row.sidebar-row:active:hover, .nemo-window .sidebar .view.cell:selected, .nemo-window .sidebar iconview.cell:selected, .nemo-window .sidebar row.cell:selected {
   background-image: linear-gradient(0deg, #282842 95%, #AD64A8 5%); }
+  .primary-toolbar .linked:not(.vertical):not(.path-bar).stack-switcher > button:backdrop:active, headerbar .linked:not(.vertical):not(.path-bar).stack-switcher > button:backdrop:active, .primary-toolbar .linked:not(.vertical):not(.path-bar).stack-switcher > button:backdrop:checked, headerbar .linked:not(.vertical):not(.path-bar).stack-switcher > button:backdrop:checked,
+  .primary-toolbar .linked:not(.vertical).path-bar > button:backdrop:active,
+  headerbar .linked:not(.vertical).path-bar > button:backdrop:active,
+  .primary-toolbar .linked:not(.vertical).path-bar > button:backdrop:checked,
+  headerbar .linked:not(.vertical).path-bar > button:backdrop:checked, filechooser placessidebar.sidebar row.sidebar-row:backdrop:selected, filechooser placessidebar.sidebar row.sidebar-row:backdrop:active:hover,
+  .nautilus-window placessidebar.sidebar row.sidebar-row:backdrop:selected,
+  .nautilus-window placessidebar.sidebar row.sidebar-row:backdrop:active:hover, .nemo-window .sidebar .view.cell:backdrop:selected, .nemo-window .sidebar iconview.cell:backdrop:selected, .nemo-window .sidebar row.cell:backdrop:selected {
+    background-image: linear-gradient(0deg, #282842 95%, rgba(173, 100, 168, 0.78) 5%);
+    color: rgba(145, 77, 141, 0.78); }
 
 widget .text-button {
   background-color: #AD64A8;
@@ -3305,14 +3351,40 @@ button.documents-favorite:active:hover {
   background-image: linear-gradient(to bottom, #1E1E32, #1E1E32);
   color: #f3f5f5; }
 
-.tweak-category:hover {
-  background-image: linear-gradient(-45deg, #262626 93%, #AD64A8 7%);
-  color: #bbc7c7; }
+.tweak-categories .tweak-category:selected:hover {
+  background-color: #282842;
+  color: #9b5296; }
+.tweak-categories .tweak-category:hover {
+  background-image: linear-gradient(-45deg, rgba(255, 255, 255, 0.1) 93%, #AD64A8 7%); }
 
+/*
+//1.1.1
+row.tweak-category:focus {
+  background-color: yellow;
+  color: $selected_fg_color;
+}*/
+/*
+//add 1.0
+.tweak-category:hover {
+  background-image: linear-gradient(-45deg, $nautilus_row_hover 93%, $selected_bg_color 7%);
+  color: $nautilus_row_hover_color;
+}
+//add 1.0
+.tweak-category:selected {
+  //@extend %selected_special;
+  background-color: blue;
+}
+//1.1.2
+.tweak-category:selected:hover {
+  background-color: red;
+}
+//
+//add 1.0
 .tweak-category:active {
   background-color: transparent;
-  color: #ffffff; }
-
+  color: $selected_fg_color;
+}
+*/
 .tr-workarea undershoot,
 .tr-workarea overshoot {
   border-color: transparent; }
@@ -3982,15 +4054,26 @@ filechooser placessidebar.sidebar,
   .nautilus-window placessidebar.sidebar row.sidebar-row {
     border: none;
     color: #f3f5f5; }
+    filechooser placessidebar.sidebar row.sidebar-row:backdrop,
+    .nautilus-window placessidebar.sidebar row.sidebar-row:backdrop {
+      color: rgba(243, 245, 245, 0.78); }
     filechooser placessidebar.sidebar row.sidebar-row .sidebar-icon,
     .nautilus-window placessidebar.sidebar row.sidebar-row .sidebar-icon {
       color: rgba(243, 245, 245, 0.6); }
+      filechooser placessidebar.sidebar row.sidebar-row .sidebar-icon:backdrop,
+      .nautilus-window placessidebar.sidebar row.sidebar-row .sidebar-icon:backdrop {
+        color: rgba(243, 245, 245, 0.34); }
     filechooser placessidebar.sidebar row.sidebar-row.has-open-popup, filechooser placessidebar.sidebar row.sidebar-row:hover,
     .nautilus-window placessidebar.sidebar row.sidebar-row.has-open-popup,
     .nautilus-window placessidebar.sidebar row.sidebar-row:hover {
       background-color: rgba(243, 245, 245, 0.15);
       background-image: linear-gradient(-45deg, #262626 93%, #AD64A8 7%);
       color: #bbc7c7; }
+      filechooser placessidebar.sidebar row.sidebar-row.has-open-popup:backdrop, filechooser placessidebar.sidebar row.sidebar-row:hover:backdrop,
+      .nautilus-window placessidebar.sidebar row.sidebar-row.has-open-popup:backdrop,
+      .nautilus-window placessidebar.sidebar row.sidebar-row:hover:backdrop {
+        color: rgba(187, 199, 199, 0.78);
+        background-image: linear-gradient(-45deg, #262626 93%, rgba(173, 100, 168, 0.78) 7%); }
     filechooser placessidebar.sidebar row.sidebar-row:disabled, filechooser placessidebar.sidebar row.sidebar-row:disabled label, filechooser placessidebar.sidebar row.sidebar-row:disabled image,
     .nautilus-window placessidebar.sidebar row.sidebar-row:disabled,
     .nautilus-window placessidebar.sidebar row.sidebar-row:disabled label,
@@ -4002,6 +4085,12 @@ filechooser placessidebar.sidebar,
     .nautilus-window placessidebar.sidebar row.sidebar-row:selected:hover .sidebar-icon,
     .nautilus-window placessidebar.sidebar row.sidebar-row:active:hover .sidebar-icon {
       color: inherit; }
+      filechooser placessidebar.sidebar row.sidebar-row:selected.has-open-popup .sidebar-icon:backdrop, filechooser placessidebar.sidebar row.sidebar-row:selected .sidebar-icon:backdrop, filechooser placessidebar.sidebar row.sidebar-row:selected:hover .sidebar-icon:backdrop, filechooser placessidebar.sidebar row.sidebar-row:active:hover .sidebar-icon:backdrop,
+      .nautilus-window placessidebar.sidebar row.sidebar-row:selected.has-open-popup .sidebar-icon:backdrop,
+      .nautilus-window placessidebar.sidebar row.sidebar-row:selected .sidebar-icon:backdrop,
+      .nautilus-window placessidebar.sidebar row.sidebar-row:selected:hover .sidebar-icon:backdrop,
+      .nautilus-window placessidebar.sidebar row.sidebar-row:active:hover .sidebar-icon:backdrop {
+        color: rgba(243, 245, 245, 0.34); }
     filechooser placessidebar.sidebar row.sidebar-row:not(:selected) button.sidebar-button,
     .nautilus-window placessidebar.sidebar row.sidebar-row:not(:selected) button.sidebar-button {
       color: #f3f5f5; }
@@ -4043,6 +4132,12 @@ filechooser placessidebar.sidebar,
 filechooser.maximized placessidebar.sidebar,
 .nautilus-window.maximized placessidebar.sidebar {
   background-color: #191919; }
+filechooser .nautilus-desktop,
+.nautilus-window .nautilus-desktop {
+  color: #f2f2f2; }
+  filechooser .nautilus-desktop:backdrop,
+  .nautilus-window .nautilus-desktop:backdrop {
+    color: rgba(242, 242, 242, 0.78); }
 
 .nemo-window .nemo-window-pane .view, .nemo-window .nemo-window-pane iconview {
   background-color: #ffffff; }
