@@ -1498,6 +1498,13 @@ menu, .menu {
       background-color: transparent;
       border-color: transparent; }
 
+popover stack > scrolledwindow viewport list row:selected:hover {
+  background-color: #AD64A8;
+  color: #ffffff; }
+  popover stack > scrolledwindow viewport list row:selected:hover label {
+    background-color: #AD64A8;
+    color: #ffffff; }
+
 popover, popover.background {
   padding: 2px;
   border-radius: 3px;
@@ -4125,9 +4132,13 @@ filechooser .path-bar button.text-button,
   .nemo-window .sidebar .view, .nemo-window .sidebar iconview, .nemo-window .sidebar row {
     background-color: transparent;
     color: #050505; }
+    .nemo-window .sidebar .view.cell:selected, .nemo-window .sidebar iconview.cell:selected, .nemo-window .sidebar row.cell:selected {
+      color: #AD64A8; }
+      .nemo-window .sidebar .view.cell:selected:hover, .nemo-window .sidebar iconview.cell:selected:hover, .nemo-window .sidebar row.cell:selected:hover {
+        color: #AD64A8; }
     .nemo-window .sidebar .view:hover, .nemo-window .sidebar iconview:hover, .nemo-window .sidebar row:hover {
-      background-color: #f3f5f5;
-      color: #383838; }
+      background-color: rgba(5, 5, 5, 0.06);
+      color: #0f0f0f; }
     .nemo-window .sidebar .view.expander, .nemo-window .sidebar iconview.expander, .nemo-window .sidebar row.expander {
       color: rgba(111, 113, 113, 0.975); }
       .nemo-window .sidebar .view.expander:hover, .nemo-window .sidebar iconview.expander:hover, .nemo-window .sidebar row.expander:hover {
