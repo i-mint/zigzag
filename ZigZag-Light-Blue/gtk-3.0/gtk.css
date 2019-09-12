@@ -4409,6 +4409,33 @@ filechooser placessidebar.sidebar scrollbar,
 .budgie-panel {
   background-color: rgba(216, 223, 223, 0.95);
   color: #050505; }
+  .budgie-panel widget button {
+    background-color: transparent;
+    border-color: transparent;
+    color: #050505; }
+    .budgie-panel widget button image {
+      color: #050505; }
+    .budgie-panel widget button:hover, .budgie-panel widget button:checked, .budgie-panel widget button:selected {
+      border-color: rgba(235, 239, 239, 0.95);
+      background-color: rgba(235, 239, 239, 0.95);
+      color: #ffffff; }
+    .budgie-panel widget button:hover image, .budgie-panel widget button:checked image, .budgie-panel widget button:selected image {
+      color: #AD64A8; }
+    .budgie-panel widget button:active image {
+      color: #b97bb5; }
+    .budgie-panel widget button:active {
+      border-color: rgba(235, 239, 239, 0.95);
+      background-color: rgba(235, 239, 239, 0.95); }
+  .budgie-panel .workspace-switcher .workspace-layout {
+    background-color: rgba(174, 188, 188, 0.95);
+    color: #050505;
+    border-radius: 0px; }
+  .budgie-panel .workspace-switcher .current-workspace {
+    background-color: rgba(173, 100, 168, 0.12);
+    color: #ffffff; }
+  .budgie-panel .workspace-add-button {
+    background-color: rgba(255, 255, 255, 0.34);
+    border-color: rgba(255, 255, 255, 0.34); }
 
 .raven-trigger stack > image {
   background-color: transparent;
